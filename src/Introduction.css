@@ -30,3 +30,7 @@
   color: white;
   font-family: 'Roboto', cursive;
 }
+
+.pointer:hover {
+  cursor: pointer;
+}

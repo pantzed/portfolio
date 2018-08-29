@@ -8,23 +8,27 @@ export interface Props {
 }
 
 interface State {
-  currentTheme: string;
+  activePage: string;
+  introActive: boolean;
+  projectsActive: boolean;
 }
 
 class App extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = { 
-      currentTheme: props.theme || "light",
+      activePage: 'introduction',
+      introActive: true,
+      projectsActive: false,
     }
   }
 
   public render() {
     return (
       <div>
-        <Navigation />
+        <Navigation activePage={this.state.activePage}/>
         <main className="container-fluid">
-          <Introduction />
+          {this.state.introActive && <Introduction />}
         </main>
       </div>
           );
