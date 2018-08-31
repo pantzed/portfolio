@@ -5,3 +5,27 @@
   font-size: 2.5em;
   font-family: 'Permanent Marker', cursive;
 }
+
+.btn-1 {
+  background-color: #2f4154;
+  color: white;
+}
+
+.btn-2 {
+  background-color: #fb474d;
+  color: white;
+}
+
+.btn-3 {
+  background-color: #74bfdd;
+  color: white;
+}
+
+.btn-4 {
+  background-color: #dbdbdb;
+  color: white;
+}
+
+.btn-5 {
+  background-color: #ececec;
+}

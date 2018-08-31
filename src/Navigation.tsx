@@ -17,16 +17,13 @@ export default class Navigation extends React.Component<Props> {
   render() {
     return (
       <div>
-        <div>
-          <canvas id="canvas" className="canvas border"></canvas>
-        </div>
-        <div className="row d-flex justify-content-center mt-4">
+        <div className="row d-flex justify-content-center pt-4">
           <div className="col-11">
             <span className="intro-header">Ed's Portfolio</span>
           </div>
         </div>
-        <div className="row d-flex justify-content-center text-center screen-height mt-5">
-          <div className="col-11 col-md-8 col-lg-6">
+        <div className="row d-flex justify-content-center text-center">
+          <div className="col-11 col-md-8 col-lg-6 pt-5">
             <div className="row d-flex justify-content-center">
               <div className="col-6 nav-col-height py-3">
                 <button className="btn btn-4 btn-nav pointer" onClick={(e) => this.props.activate(e, 'INTRO')}>Introduction</button>
