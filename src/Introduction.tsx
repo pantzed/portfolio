@@ -14,7 +14,7 @@ export default class Introduction extends React.Component<Props> {
   render() {
     return (
       <div>
-        <div className="row mt-3">
+        <div className="row pt-3">
           <div className="col-12">
             <button className="btn btn-sm" onClick={(e) => this.props.activate(e, 'NAV')}>Home</button>
           </div>

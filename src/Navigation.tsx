@@ -10,10 +10,6 @@ export default class Navigation extends React.Component<Props> {
     super(props);
   }
 
-  componentDidMount(){
-    //bubbles here
-  }
-
   render() {
     return (
       <div>
@@ -26,18 +22,18 @@ export default class Navigation extends React.Component<Props> {
           <div className="col-11 col-md-8 col-lg-6 pt-5">
             <div className="row d-flex justify-content-center">
               <div className="col-6 nav-col-height py-3">
-                <button className="btn btn-4 btn-nav pointer" onClick={(e) => this.props.activate(e, 'INTRO')}>Introduction</button>
+                <button className="btn btn-4 btn-nav pointer shadow" onClick={(e) => this.props.activate(e, 'INTRO')}>Introduction</button>
               </div>
               <div className="col-6 nav-col-height py-3">
-              <button className="btn btn-3 btn-nav pointer" onClick={(e) => this.props.activate(e, 'EXP')}>Experience</button>
+              <button className="btn btn-3 btn-nav pointer shadow" onClick={(e) => this.props.activate(e, 'EXP')}>Experience</button>
               </div>
             </div>
             <div className="row d-flex justify-content-center">
               <div className="col-6 nav-col-height py-3">
-                <button className="btn btn-2 btn-nav pointer" onClick={(e) => this.props.activate(e, 'PROJECTS')}>Projects</button>
+                <button className="btn btn-2 btn-nav pointer shadow" onClick={(e) => this.props.activate(e, 'PROJECTS')}>Projects</button>
               </div>
               <div className="col-6 nav-col-height py-3">
-              <button className="btn btn-1 btn-nav pointer" onClick={(e) => this.props.activate(e, 'CONTACT')}>Contact</button>
+              <button className="btn btn-1 btn-nav pointer shadow" onClick={(e) => this.props.activate(e, 'CONTACT')}>Contact</button>
               </div>
             </div>
           </div>
