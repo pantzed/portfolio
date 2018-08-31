@@ -21,7 +21,21 @@ export default class Introduction extends React.Component<Props> {
         </div>
         <div className="row mt-4">
           <div className="col-12">
-            <h1>Introduction</h1>
+            <span className="intro-header">Introduction</span>
+          </div>
+        </div>
+        <div className="row d-flex justify-content-center mt-3">
+          <div className="col-11">
+            <span className="intro-paragraph">
+              <p>
+                Before learning to program, I obtained a degree in Integrative Physiology, 
+                worked in technical sales, and excelled in digital marketing. The transition 
+                to full-time development has been extremely enjoyable because it has allowed 
+                me to be analytical and creative while taking projects from the design stage 
+                through to functionality. Now, I'm looking forward to working with companies 
+                that build user-centric products and positively impact the world around me.
+              </p>
+            </span>
           </div>
         </div>
       </div>
