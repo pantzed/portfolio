@@ -1,11 +1,10 @@
 import * as React from 'react';
-import './Introduction.css';
 
 export interface Props {
   activate: Function;
 }
 
-export default class Introduction extends React.Component<Props> {
+export default class Contact extends React.Component<Props> {
   constructor(props: Props){
     super(props);
     this.state = {};
@@ -21,7 +20,7 @@ export default class Introduction extends React.Component<Props> {
         </div>
         <div className="row mt-4">
           <div className="col-12">
-            <h1>Introduction</h1>
+            <h1>Contact</h1>
           </div>
         </div>
       </div>
