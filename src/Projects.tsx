@@ -22,10 +22,10 @@ const Projects: React.SFC<Props> = (props) => {
         <div className="col-11">
           <div className="row">
             <div className="col-12">
-              <div className="card">
+              <div className="card shadow-sm">
                 <img className="card-img-top" src="https://images.pexels.com/photos/542556/pexels-photo-542556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350" alt="Card image cap" />
                 <div className="card-body">
-                  <h5 className="card-title">Stroke with Friends</h5>
+                  <h5 className="card-title"><span className="font-weight-bold">Stroke with Friends</span></h5>
                   <p className="card-text">
                     A collaborative painting application that allows users to draw on a public HTML canvas 
                     with any number of other users.
@@ -37,10 +37,10 @@ const Projects: React.SFC<Props> = (props) => {
           </div>
           <div className="row mt-5">
             <div className="col-12">
-              <div className="card">
+              <div className="card shadow-sm">
                 <img className="card-img-top" src="https://images.pexels.com/photos/696218/pexels-photo-696218.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350" alt="Card image cap" />
                 <div className="card-body">
-                  <h5 className="card-title">New Here</h5>
+                <h5 className="card-title"><span className="font-weight-bold">New Here</span></h5>
                   <p className="card-text">  
                     A social site that helps people find activities when they are new to a place.
                   </p>
@@ -51,13 +51,27 @@ const Projects: React.SFC<Props> = (props) => {
           </div>
           <div className="row mt-5">
             <div className="col-12">
-              <div className="card">
+              <div className="card shadow-sm">
                 <img className="card-img-top" src="https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350" alt="Card image cap" />
                 <div className="card-body">
-                  <h5 className="card-title">Energy Live 2</h5>
+                <h5 className="card-title"><span className="font-weight-bold">Energy Live</span></h5>
                   <p className="card-text">  
                     A revision of the original "energy-live" using node/express to serve a webpage 
                     showing electrical energy data.
+                  </p>
+                  <a href="https://github.com/pantzed" className="btn btn-2">Open Project</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row mt-5">
+            <div className="col-12">
+              <div className="card shadow-sm">
+                <img className="card-img-top" src="https://images.pexels.com/photos/1044989/pexels-photo-1044989.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350" alt="Card image cap" />
+                <div className="card-body">
+                <h5 className="card-title"><span className="font-weight-bold">Pixel Art Maker</span></h5>
+                  <p className="card-text">  
+                    An artistic outlet for creating pixelated artwork.
                   </p>
                   <a href="https://github.com/pantzed" className="btn btn-2">Open Project</a>
                 </div>

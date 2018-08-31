@@ -19,7 +19,7 @@ export default class Navigation extends React.Component<Props> {
           </div>
         </div>
         <div className="row d-flex justify-content-center text-center">
-          <div className="col-11 col-md-8 col-lg-6 pt-5">
+          <div className="col-11 col-md-8 col-lg-6 pt-4">
             <div className="row d-flex justify-content-center">
               <div className="col-6 nav-col-height py-3">
                 <button className="btn btn-4 btn-nav pointer shadow" onClick={(e) => this.props.activate(e, 'INTRO')}>Introduction</button>
