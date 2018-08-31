@@ -1,7 +1,5 @@
 import * as React from 'react';
 import Navigation from './Navigation';
-import Introduction from './Introduction';
-import Projects from "./Projects";
 import './App.css';
 
 export interface Props {
@@ -45,10 +43,8 @@ class App extends React.Component<Props, State> {
   public render() {
     return (
       <div>
-        <Navigation activate={this.activate}/>
         <main className="container-fluid">
-          {this.state.introActive && <Introduction />}
-          {this.state.projectsActive && <Projects props={this.props}/>}
+          {this.state.introActive && <Navigation />}
         </main>
       </div>
     );

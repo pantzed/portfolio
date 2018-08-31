@@ -1,42 +1,37 @@
 import * as React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import AnchorButton from './AnchorButton';
 import './Navigation.css';
 
-export interface Props {
-  activate: any;
-}
 
-interface State {
-  active: string;
-}
-
-class Navigation extends React.Component<Props, State> {
-  constructor(props: Props){
-    super(props);
-    this.state = {
-      active: 'active',
-    }
-  }
-
-  public render() {
-    return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="#">Ed's Portfolio</a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-          <div className="navbar-nav" onClick={this.props.activate}>
-            <AnchorButton text="Introduction" page="INTRO" icon={<FontAwesomeIcon icon="handshake" transform="left-7"/>} />
-            <AnchorButton text="Projects" icon={<FontAwesomeIcon icon="code-branch" transform="left-7"/>} />
-            <AnchorButton text="Experience" icon={<FontAwesomeIcon icon="clipboard-list" transform="left-7"/>} />
-            <AnchorButton text="Contact" icon={<FontAwesomeIcon icon="envelope" transform="left-7"/>} />
+function Navigation() {
+  return (
+    <div>
+      <div className="row d-flex justify-content-center mt-4">
+        <div className="col-11">
+          <span className="intro-header">Ed's Portfolio</span>
+        </div>
+      </div>
+      <div className="row d-flex justify-content-center text-center screen-height mt-5">
+        <div className="col-11 col-md-8 col-lg-6">
+          <div className="row d-flex justify-content-center">
+            <div className="col-6 nav-col-height py-3">
+              <button className="btn btn-4 btn-nav">Introduction</button>
+            </div>
+            <div className="col-6 nav-col-height py-3">
+            <button className="btn btn-3 btn-nav">Experience</button>
+            </div>
+          </div>
+          <div className="row d-flex justify-content-center">
+            <div className="col-6 nav-col-height py-3">
+              <button className="btn btn-2 btn-nav">Projects</button>
+            </div>
+            <div className="col-6 nav-col-height py-3">
+            <button className="btn btn-1 btn-nav">Contact</button>
+            </div>
           </div>
         </div>
-      </nav>
-    )
-  }
+      </div>
+    </div>
+  )
 }
 
 export default Navigation;
