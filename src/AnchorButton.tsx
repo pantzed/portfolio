@@ -3,6 +3,7 @@ import './AnchorButton.css';
 
 export interface Props {
   text: string;
+  page?: string;
   active?: string;
   handleActive?: any;
   href?: string;

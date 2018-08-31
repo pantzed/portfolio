@@ -1,10 +1,10 @@
 import * as React from 'react';
 import Navigation from './Navigation';
 import Introduction from './Introduction';
+import Projects from "./Projects";
 import './App.css';
 
 export interface Props {
-  theme?: string;
 }
 
 interface State {
@@ -21,17 +21,37 @@ class App extends React.Component<Props, State> {
       introActive: true,
       projectsActive: false,
     }
+    this.activate = this.activate.bind(this);
+  }
+
+  activate(event: any):void {
+    const page = event.target.getAttribute('page');
+    console.log(page);
+    switch(page) {
+      case 'PROJECTS': 
+        this.setState({
+          introActive: false,
+          projectsActive: true,
+        });
+      case 'INTRO':
+      this.setState({
+        introActive: true,
+        projectsActive: false,
+      });
+      default: break;
+    }
   }
 
   public render() {
     return (
       <div>
-        <Navigation activePage={this.state.activePage}/>
+        <Navigation activate={this.activate}/>
         <main className="container-fluid">
           {this.state.introActive && <Introduction />}
+          {this.state.projectsActive && <Projects props={this.props}/>}
         </main>
       </div>
-          );
+    );
   }
 }
 

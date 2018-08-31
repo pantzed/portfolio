@@ -16,14 +16,15 @@ export default class Introduction extends React.Component<Props, State> {
   constructor(props: Props){
     super(props);
     this.state = {
-      showDev: true,
+      showDev: false,
       showDesign: false,
       showMarketing: false, 
       showPhys: false,
     };
+    this.showDev = this.showDev.bind(this);
   }
 
-  showDev() {
+  showDev():void {
     this.setState({
       showDev: true,
       showDesign: false,
@@ -34,7 +35,7 @@ export default class Introduction extends React.Component<Props, State> {
 
   render() {
     return (
-      <div className="row bg-image">
+      <div className="row screen-height">
         <div className="col-4 bg-dark">
           <div className="row mt-4">
             <div className="col-12 mt-1">
@@ -61,6 +62,8 @@ export default class Introduction extends React.Component<Props, State> {
               <button type="button" className="btn btn-outline-success mr-1 mt-1">Technical Sales</button>
             </div>
           </div>
+        </div>
+        <div className="col-8 bg-image">
         </div>
       </div>
     )

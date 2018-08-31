@@ -4,7 +4,7 @@ import AnchorButton from './AnchorButton';
 import './Navigation.css';
 
 export interface Props {
-  activePage: string;
+  activate: any;
 }
 
 interface State {
@@ -27,8 +27,8 @@ class Navigation extends React.Component<Props, State> {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-          <div className="navbar-nav">
-            <AnchorButton text="Introduction" icon={<FontAwesomeIcon icon="handshake" transform="left-7"/>} />
+          <div className="navbar-nav" onClick={this.props.activate}>
+            <AnchorButton text="Introduction" page="INTRO" icon={<FontAwesomeIcon icon="handshake" transform="left-7"/>} />
             <AnchorButton text="Projects" icon={<FontAwesomeIcon icon="code-branch" transform="left-7"/>} />
             <AnchorButton text="Experience" icon={<FontAwesomeIcon icon="clipboard-list" transform="left-7"/>} />
             <AnchorButton text="Contact" icon={<FontAwesomeIcon icon="envelope" transform="left-7"/>} />
