@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './Experience.css';
 
 export interface Props {
   activate: Function;
@@ -20,7 +21,7 @@ export default class Experience extends React.Component<Props> {
         </div>
         <div className="row mt-4">
           <div className="col-12">
-            <h1>Experience</h1>
+            <span className="intro-header">Experience</span>
           </div>
         </div>
       </div>

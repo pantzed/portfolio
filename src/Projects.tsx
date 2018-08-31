@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './Projects.css';
 
 export interface Props {
   activate: Function;
@@ -14,7 +15,7 @@ const Projects: React.SFC<Props> = (props) => {
       </div>
       <div className="row mt-3">
         <div className="col-12">
-          <h1>Projects</h1>
+          <span className="intro-header">Projects</span>
         </div>
       </div>
     </div>
