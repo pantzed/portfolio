@@ -1,7 +1,24 @@
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+.profile-header {
+  font-family: 'Montserrat', sans;
+  font-size: 2.2em;
+}
+
+.text-custom {
+  color: #5EECBE;
+}
+
+.montserrat {
+  font-family: 'Montserrat', sans;
+}
+
+.border-custom {
+  border: 1px solid #5EECBE;
+}
 
 .intro-header {
-  color: black;
+  color: white;
   font-size: 3.2em;
   font-family: 'Permanent Marker', cursive;
 }
@@ -9,10 +26,6 @@
 .screen-height {
   height: 100vh;
   min-height: 100vh;
-}
-
-.nav-col-height {
-  height: 20vh;
 }
 
 .btn-nav {

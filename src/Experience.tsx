@@ -72,7 +72,6 @@ export default class Experience extends React.Component<Props> {
               <li>
                 Grew a yearly revenue of $750,000 to over $4.2 million in three years by 
                 hosting webinars, in-person technical training, and attending 15+ tradeshows. 
-
               </li>
               <li>
                 Became an expert on topics in renewable energy, utility billing, and power 

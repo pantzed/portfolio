@@ -84,7 +84,7 @@ class App extends React.Component<Props, State> {
   public render() {
     return (
       <div>
-        <main className="container-fluid">
+        <main className="container-fluid bg-app full-height text-light">
           {this.state.navigationActive && <Navigation activate={this.activate}/>}
           {this.state.introActive && <Introduction activate={this.activate}/>}
           {this.state.projectsActive && <Projects activate={this.activate}/>}
