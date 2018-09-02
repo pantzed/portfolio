@@ -37,7 +37,8 @@ export default class Navigation extends React.Component<Props, State> {
 
   render() {
     return (
-      <div>
+      <div className="row">
+      <div className="col-12">
         <div className="row pt-4">
           <div className="col-11">
             <span className="profile-header">ED PANTZAR</span>
@@ -45,7 +46,7 @@ export default class Navigation extends React.Component<Props, State> {
         </div>
         <div className="row">
           <div className="col-12">
-            <span className="text-custom montserrat pl-1">Web Developer</span>
+            <span className="text-custom montserrat pl-1">Web Developer | Austin, TX</span>
           </div>
         </div>
         <div className="row pt-2">
@@ -56,7 +57,7 @@ export default class Navigation extends React.Component<Props, State> {
           </div>
         </div>
         <div className="row mt-5 ml-2">
-          <div className="col-auto p-3 montserrat border border-light rounded text-center bg-tp-light">
+          <div className="col-auto p-3 montserrat border border-light rounded text-center bg-tp-light stat-shadow">
             <div className="row">
               <div className="col-12 text-center">
                 <span className="text-custom">YEARS EXP</span>
@@ -71,7 +72,7 @@ export default class Navigation extends React.Component<Props, State> {
           </div>
         </div>
         <div className="row mt-4 ml-2">
-          <div className="col-auto p-3 montserrat border border-light rounded text-center bg-tp-light">
+          <div className="col-auto p-3 montserrat border border-light rounded text-center bg-tp-light stat-shadow">
             <div className="row">
               <div className="col-12 text-center">
                 <span className="text-custom">GIT REPOS</span>
@@ -86,7 +87,7 @@ export default class Navigation extends React.Component<Props, State> {
           </div>
         </div>
         <div className="row mt-4 ml-2">
-          <div className="col-auto p-3 montserrat border border-light rounded text-center bg-tp-light">
+          <div className="col-auto p-3 montserrat border border-light rounded text-center bg-tp-light stat-shadow">
             <div className="row">
               <div className="col-12 text-center">
                 <span className="text-custom">MILES COMMUTED (YTD)</span>
@@ -100,7 +101,7 @@ export default class Navigation extends React.Component<Props, State> {
             </div>
           </div>
         </div>
-        <div className="row mt-5 d-flex justify-content-center align-self-end bg-tp-dark">
+        <div className="row mt-5 d-flex justify-content-center bg-tp-dark">
           <div className="col-11 col-md-8 col-lg-6 pt-1 pb-2">
             <div className="row">
               <div className="col-6 nav-col-height py-3">
@@ -120,6 +121,7 @@ export default class Navigation extends React.Component<Props, State> {
             </div>
           </div>
         </div>
+      </div>
       </div>
     )
   }
