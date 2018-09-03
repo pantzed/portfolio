@@ -10,7 +10,7 @@ body {
     url(./face.jpg);
   background-size: 195%;
   background-repeat: no-repeat;
-  background-position: left 20%;
+  background-position: left 20% top 0%;
   padding-top: constant(safe-area-inset-top);
   padding-top: env(safe-area-inset-top);
 }

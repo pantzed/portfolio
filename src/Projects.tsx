@@ -5,12 +5,36 @@ export interface Props {
   activate: Function;
 }
 
-const Projects: React.SFC<Props> = (props) => {
-  return (
+interface State {
+  projects: Object,
+}
+
+export class Projects extends React.Component<Props, State>{
+  constructor(props: Props){
+    super(props);
+    this.state = {
+      projects: {},
+    };
+  }
+
+  componentDidMount(){
+    fetch('/projects', {method:"GET"})
+    .then((res) => res.text())
+    .then((text) => JSON.parse(text))
+    .then((data) => {
+      this.setState({
+        projects: data,
+      });
+    });
+    console.log(this.state.projects);
+  }
+
+  render(){
+    return (
     <div className="text-dark">
       <div className="row pt-3">
         <div className="col-12">
-          <button className="btn btn-sm" onClick={(e) => props.activate(e, 'NAV')}>Home</button>
+          <button className="btn btn-sm" onClick={(e) => this.props.activate(e, 'NAV')}>Home</button>
         </div>
       </div>
       <div className="row mt-3">
@@ -81,7 +105,8 @@ const Projects: React.SFC<Props> = (props) => {
         </div>
       </div>
     </div>
-  );
+    )
+  }
 }
 
 export default Projects;

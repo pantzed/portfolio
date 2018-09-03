@@ -21,9 +21,9 @@ class App extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = { 
-      navigationActive: true,
+      navigationActive: false,
       introActive: false,
-      projectsActive: false,
+      projectsActive: true,
       experienceActive: false,
       contactActive: false,
     }
