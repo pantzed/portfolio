@@ -20,7 +20,7 @@ export class Projects extends React.Component<Props, State>{
   mapProjects(){
     const projectsJSX = this.state.projects.map((project: any, index: number) => {
       return (
-        <div className="row mt-5" key={index}>
+        <div className="row mt-5" key={index.toString()}>
           <div className="col-12">
             <div className="card stat-shadow">
               <img className="card-img-top" src={ project.img } alt="Card image cap" />
