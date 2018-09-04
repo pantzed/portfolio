@@ -6,15 +6,36 @@ export interface Props {
 }
 
 interface State {
-  projects: Object,
+  projects: any,
 }
 
 export class Projects extends React.Component<Props, State>{
   constructor(props: Props){
     super(props);
     this.state = {
-      projects: {},
+      projects: [],
     };
+  }
+
+  mapProjects(){
+    const projectsJSX = this.state.projects.map((project: any, index: number) => {
+      console.log(project);
+      return (
+        <div className="row" key={index}>
+          <div className="col-12">
+            <div className="card shadow-sm">
+              <img className="card-img-top" src={ project.img } alt="Card image cap" />
+              <div className="card-body">
+                <h5 className="card-title"><span className="font-weight-bold">{ project.title }</span></h5>
+                <p className="card-text">{ project.description }</p>
+                <a href={ project.url } className="btn btn-2">Open Project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    });
+    return projectsJSX;
   }
 
   componentDidMount(){
@@ -25,8 +46,7 @@ export class Projects extends React.Component<Props, State>{
       this.setState({
         projects: data,
       });
-    });
-    console.log(this.state.projects);
+    })
   }
 
   render(){
@@ -44,21 +64,7 @@ export class Projects extends React.Component<Props, State>{
       </div>
       <div className="row d-flex justify-content-center mt-3 mb-5">
         <div className="col-11">
-          <div className="row">
-            <div className="col-12">
-              <div className="card shadow-sm">
-                <img className="card-img-top" src="https://images.pexels.com/photos/542556/pexels-photo-542556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350" alt="Card image cap" />
-                <div className="card-body">
-                  <h5 className="card-title"><span className="font-weight-bold">Stroke with Friends</span></h5>
-                  <p className="card-text">
-                    A collaborative painting application that allows users to draw on a public HTML canvas 
-                    with any number of other users.
-                  </p>
-                  <a href="https://github.com/pantzed" className="btn btn-2">Open Project</a>
-                </div>
-              </div>
-            </div>
-          </div>
+        { this.mapProjects() }
           <div className="row mt-5">
             <div className="col-12">
               <div className="card shadow-sm">

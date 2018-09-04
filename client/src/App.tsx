@@ -1,10 +1,10 @@
 import * as React from 'react';
+import './App.css';
+import Contact from './Contact';
+import Experience from './Experience';
+import Introduction from './Introduction';
 import Navigation from './Navigation';
 import Projects from './Projects';
-import Introduction from './Introduction';
-import Experience from './Experience';
-import Contact from './Contact';
-import './App.css';
 
 export interface Props {
 }
