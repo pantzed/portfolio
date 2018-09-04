@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCodeBranch, faGraduationCap, faBicycle, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faCodeBranch, faGraduationCap, faBicycle, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import './Home.css';
 
-library.add(faCodeBranch, faGraduationCap, faBicycle, faBars);
+library.add(faCodeBranch, faGraduationCap, faBicycle, faBars, faTimes);
 
 export interface Props {
   activate: Function;
@@ -42,7 +42,7 @@ export default class Navigation extends React.Component<Props, State> {
       <div className="row pt-4">
         <div className="col-12 d-flex justify-content-between">
           <span className="page-header">ED PANTZAR</span>
-          <span className="p-3 border border-light rounded text-center text-custom bg-tp-light stat-shadow" onClick={(e) => this.props.activate(e, 'HOME')}><FontAwesomeIcon icon='bars'/></span>
+          <span className="p-3 border border-light rounded text-center text-custom bg-tp-light stat-shadow" onClick={(e) => this.props.activate(e, 'NAV')}><FontAwesomeIcon icon='bars'/></span>
         </div>
       </div>
         <div className="row">
@@ -98,26 +98,6 @@ export default class Navigation extends React.Component<Props, State> {
               <div className="col-12 pt-2 d-flex justify-content-center align-items-center">
                 <FontAwesomeIcon className="icon" icon="bicycle" />
                 <span className="pl-3 stat">{this.state.mileCount}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="row mt-5 d-flex justify-content-center bg-tp-dark">
-          <div className="col-11 col-md-8 col-lg-6 pt-1 pb-2">
-            <div className="row">
-              <div className="col-6 nav-col-height py-3">
-                <button className="btn btn-link border-custom text-custom btn-nav pointer shadow" onClick={(e) => this.props.activate(e, 'INTRO')}>Introduction</button>
-              </div>
-              <div className="col-6 nav-col-height py-3">
-              <button className="btn btn-link border-custom text-custom btn-nav pointer shadow" onClick={(e) => this.props.activate(e, 'EXP')}>Experience</button>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-6 nav-col-height py-3">
-                <button className="btn btn-link border-custom text-custom btn-nav pointer shadow" onClick={(e) => this.props.activate(e, 'PROJECTS')}>Projects</button>
-              </div>
-              <div className="col-6 nav-col-height py-3">
-              <button className="btn btn-link border-custom text-custom btn-nav pointer shadow" onClick={(e) => this.props.activate(e, 'CONTACT')}>Contact</button>
               </div>
             </div>
           </div>

@@ -4,12 +4,14 @@ import Contact from './Contact';
 import Experience from './Experience';
 import Introduction from './Introduction';
 import Home from './Home';
+import Nav from './Nav';
 import Projects from './Projects';
 
 export interface Props {
 }
 
 interface State {
+  navActive: boolean;
   homeActive: boolean;
   introActive: boolean;
   projectsActive: boolean;
@@ -21,7 +23,8 @@ class App extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = { 
-      homeActive: true,
+      navActive: true,
+      homeActive: false,
       introActive: false,
       projectsActive: false,
       experienceActive: false,
@@ -33,8 +36,19 @@ class App extends React.Component<Props, State> {
   activate(event: any, page: string):void {
     event.preventDefault();
     switch(page) {
+      case 'NAV':
+        this.setState({
+          navActive: true,
+          homeActive: false,
+          introActive: false,
+          projectsActive: false,
+          experienceActive: false,
+          contactActive: false,
+        });
+        break;
       case 'HOME':
         this.setState({
+          navActive: false,
           homeActive: true,
           introActive: false,
           projectsActive: false,
@@ -44,6 +58,7 @@ class App extends React.Component<Props, State> {
         break;
       case 'INTRO':
         this.setState({
+          navActive: false,
           homeActive: false,
           introActive: true,
           projectsActive: false,
@@ -53,6 +68,7 @@ class App extends React.Component<Props, State> {
         break;
       case 'PROJECTS': 
         this.setState({
+          navActive: false,
           homeActive: false,
           introActive: false,
           projectsActive: true,
@@ -62,6 +78,7 @@ class App extends React.Component<Props, State> {
         break;
       case 'EXP': 
         this.setState({
+          navActive: false,
           homeActive: false,
           introActive: false,
           projectsActive: false,
@@ -71,6 +88,7 @@ class App extends React.Component<Props, State> {
         break;
       case 'CONTACT': 
         this.setState({
+          navActive: false,
           homeActive: false,
           introActive: false,
           projectsActive: false,
@@ -85,6 +103,7 @@ class App extends React.Component<Props, State> {
     return (
       <div>
         <main className="container-fluid bg-app full-height text-light">
+          {this.state.navActive && <Nav activate={this.activate}/>}
           {this.state.homeActive && <Home activate={this.activate}/>}
           {this.state.introActive && <Introduction activate={this.activate}/>}
           {this.state.projectsActive && <Projects activate={this.activate}/>}
