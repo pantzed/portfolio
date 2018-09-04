@@ -5,6 +5,10 @@
   font-size: 2.2em;
 }
 
+.bg-custom {
+  background-color: #5EECBE;
+}
+
 .text-custom {
   color: #5EECBE;
 }
@@ -15,12 +19,6 @@
 
 .border-custom {
   border: 1px solid #5EECBE;
-}
-
-.intro-header {
-  color: white;
-  font-size: 3.2em;
-  font-family: 'Permanent Marker', cursive;
 }
 
 .screen-height {
@@ -75,4 +73,8 @@
 
 .stat-shadow {
   box-shadow: 0 0 7px 0 rgba(255, 255, 255, 0.5) !important;
+}
+
+.dark-shadow {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25) !important;
 }
