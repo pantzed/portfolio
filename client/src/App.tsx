@@ -17,23 +17,25 @@ interface State {
   projectsActive: boolean;
   experienceActive: boolean;
   contactActive: boolean;
+  prevPage: string;
 }
 
 class App extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = { 
-      navActive: true,
-      homeActive: false,
+      navActive: false,
+      homeActive: true,
       introActive: false,
       projectsActive: false,
       experienceActive: false,
       contactActive: false,
+      prevPage: 'HOME',
     }
     this.activate = this.activate.bind(this);
   }
 
-  activate(event: any, page: string):void {
+  activate(event: any, page: string, prev: string):void {
     event.preventDefault();
     switch(page) {
       case 'NAV':
@@ -44,6 +46,7 @@ class App extends React.Component<Props, State> {
           projectsActive: false,
           experienceActive: false,
           contactActive: false,
+          prevPage: prev,
         });
         break;
       case 'HOME':
@@ -54,6 +57,7 @@ class App extends React.Component<Props, State> {
           projectsActive: false,
           experienceActive: false,
           contactActive: false,
+          prevPage: prev,
         });
         break;
       case 'INTRO':
@@ -64,6 +68,7 @@ class App extends React.Component<Props, State> {
           projectsActive: false,
           experienceActive: false,
           contactActive: false,
+          prevPage: prev,
         });
         break;
       case 'PROJECTS': 
@@ -84,6 +89,7 @@ class App extends React.Component<Props, State> {
           projectsActive: false,
           experienceActive: true,
           contactActive: false,
+          prevPage: prev,
         });
         break;
       case 'CONTACT': 
@@ -94,6 +100,7 @@ class App extends React.Component<Props, State> {
           projectsActive: false,
           experienceActive: false,
           contactActive: true,
+          prevPage: prev,
         });
       default: break;
     }
@@ -103,7 +110,7 @@ class App extends React.Component<Props, State> {
     return (
       <div>
         <main className="container-fluid bg-app full-height text-light">
-          {this.state.navActive && <Nav activate={this.activate}/>}
+          {this.state.navActive && <Nav activate={this.activate} prev={this.state.prevPage}/>}
           {this.state.homeActive && <Home activate={this.activate}/>}
           {this.state.introActive && <Introduction activate={this.activate}/>}
           {this.state.projectsActive && <Projects activate={this.activate}/>}

@@ -42,7 +42,7 @@ export default class Navigation extends React.Component<Props, State> {
       <div className="row pt-4">
         <div className="col-12 d-flex justify-content-between">
           <span className="page-header">ED PANTZAR</span>
-          <span className="p-3 border border-light rounded text-center text-custom bg-tp-light stat-shadow" onClick={(e) => this.props.activate(e, 'NAV')}><FontAwesomeIcon icon='bars'/></span>
+          <span className="p-3 border border-light rounded text-center text-custom bg-tp-light stat-shadow" onClick={(e) => this.props.activate(e, 'NAV', 'HOME')}><FontAwesomeIcon icon='bars'/></span>
         </div>
       </div>
         <div className="row">
