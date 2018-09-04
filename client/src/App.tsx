@@ -3,14 +3,14 @@ import './App.css';
 import Contact from './Contact';
 import Experience from './Experience';
 import Introduction from './Introduction';
-import Navigation from './Navigation';
+import Home from './Home';
 import Projects from './Projects';
 
 export interface Props {
 }
 
 interface State {
-  navigationActive: boolean;
+  homeActive: boolean;
   introActive: boolean;
   projectsActive: boolean;
   experienceActive: boolean;
@@ -21,9 +21,9 @@ class App extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = { 
-      navigationActive: false,
+      homeActive: true,
       introActive: false,
-      projectsActive: true,
+      projectsActive: false,
       experienceActive: false,
       contactActive: false,
     }
@@ -33,9 +33,9 @@ class App extends React.Component<Props, State> {
   activate(event: any, page: string):void {
     event.preventDefault();
     switch(page) {
-      case 'NAV':
+      case 'HOME':
         this.setState({
-          navigationActive: true,
+          homeActive: true,
           introActive: false,
           projectsActive: false,
           experienceActive: false,
@@ -44,7 +44,7 @@ class App extends React.Component<Props, State> {
         break;
       case 'INTRO':
         this.setState({
-          navigationActive: false,
+          homeActive: false,
           introActive: true,
           projectsActive: false,
           experienceActive: false,
@@ -53,7 +53,7 @@ class App extends React.Component<Props, State> {
         break;
       case 'PROJECTS': 
         this.setState({
-          navigationActive: false,
+          homeActive: false,
           introActive: false,
           projectsActive: true,
           experienceActive: false,
@@ -62,7 +62,7 @@ class App extends React.Component<Props, State> {
         break;
       case 'EXP': 
         this.setState({
-          navigationActive: false,
+          homeActive: false,
           introActive: false,
           projectsActive: false,
           experienceActive: true,
@@ -71,7 +71,7 @@ class App extends React.Component<Props, State> {
         break;
       case 'CONTACT': 
         this.setState({
-          navigationActive: false,
+          homeActive: false,
           introActive: false,
           projectsActive: false,
           experienceActive: false,
@@ -85,7 +85,7 @@ class App extends React.Component<Props, State> {
     return (
       <div>
         <main className="container-fluid bg-app full-height text-light">
-          {this.state.navigationActive && <Navigation activate={this.activate}/>}
+          {this.state.homeActive && <Home activate={this.activate}/>}
           {this.state.introActive && <Introduction activate={this.activate}/>}
           {this.state.projectsActive && <Projects activate={this.activate}/>}
           {this.state.experienceActive && <Experience activate={this.activate}/>}

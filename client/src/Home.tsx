@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCodeBranch, faGraduationCap, faBicycle } from '@fortawesome/free-solid-svg-icons';
-import './Navigation.css';
+import { faCodeBranch, faGraduationCap, faBicycle, faBars } from '@fortawesome/free-solid-svg-icons';
+import './Home.css';
 
-library.add(faCodeBranch, faGraduationCap, faBicycle);
+library.add(faCodeBranch, faGraduationCap, faBicycle, faBars);
 
 export interface Props {
   activate: Function;
@@ -39,11 +39,12 @@ export default class Navigation extends React.Component<Props, State> {
     return (
       <div className="row">
       <div className="col-12">
-        <div className="row pt-4">
-          <div className="col-11">
-            <span className="profile-header">ED PANTZAR</span>
-          </div>
+      <div className="row pt-4">
+        <div className="col-12 d-flex justify-content-between">
+          <span className="page-header">ED PANTZAR</span>
+          <span className="p-3 border border-light rounded text-center text-custom bg-tp-light stat-shadow" onClick={(e) => this.props.activate(e, 'HOME')}><FontAwesomeIcon icon='bars'/></span>
         </div>
+      </div>
         <div className="row">
           <div className="col-12">
             <span className="text-custom montserrat pl-1">Web Developer | Austin, TX</span>
