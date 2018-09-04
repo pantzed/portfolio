@@ -38,7 +38,15 @@ export class Projects extends React.Component<Props, State>{
   }
 
   componentDidMount(){
-    fetch('/projects', {method:"GET"})
+    fetch('/projects', {
+      method: 'GET',
+      mode: 'cors',
+      headers: {
+          "Content-Type": "application/json; charset=utf-8",
+      },
+      redirect: "follow",
+      referrer: "no-referrer"
+    })
     .then((res) => res.text())
     .then((text) => JSON.parse(text))
     .then((data) => {
