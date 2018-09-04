@@ -21,7 +21,7 @@ export default class Nav extends React.Component<Props>{
         <div className="col-12">
           <div className="row pt-4 nav-custom">
             <div className="col-12 d-flex justify-content-between">
-              <span className="page-header">Navigate</span>
+              <span className="page-header">NAVIGATE</span>
               <span className="p-3 border border-light rounded text-center text-custom bg-tp-light stat-shadow" onClick={(e) => this.props.activate(e, this.props.prev)}><FontAwesomeIcon icon='times'/></span>
             </div>
           </div>

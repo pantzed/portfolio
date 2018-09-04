@@ -13,6 +13,7 @@ export interface Props {
 interface State {
   repoCount: number;
   mileCount: number;
+  loading: boolean;
 }
 
 export default class Navigation extends React.Component<Props, State> {
@@ -21,17 +22,22 @@ export default class Navigation extends React.Component<Props, State> {
     this.state = {
       repoCount: 0,
       mileCount: 246,
+      loading: false,
     }
   }
 
   componentDidMount() :void {
+    this.setState({loading: true});
     fetch('https://cors-anywhere.herokuapp.com/https://api.github.com/users/pantzed', {method: "GET"})
     .then((res) => res.text())
     .then((data) => JSON.parse(data))
     .then((json) => {
       this.setState({
         repoCount: json.public_repos,
-      });
+      })
+    })
+    .then(() => {
+      this.setState({loading: false});
     });
   }
 
