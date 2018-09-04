@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Experience.css';
 
 export interface Props {
@@ -14,16 +15,13 @@ export default class Experience extends React.Component<Props> {
   render() {
     return (
       <div>
-        <div className="row pt-3">
-          <div className="col-12">
-            <button className="btn btn-sm" onClick={(e) => this.props.activate(e, 'NAV')}>Home</button>
+        
+        <div className="row pt-4 nav-custom">
+            <div className="col-12 d-flex justify-content-between">
+              <span className="page-header">Experience</span>
+              <span className="p-3 border border-light rounded text-center text-custom bg-tp-light stat-shadow" onClick={(e) => this.props.activate(e, 'HOME')}><FontAwesomeIcon icon='bars'/></span>
+            </div>
           </div>
-        </div>
-        <div className="row mt-4">
-          <div className="col-12">
-            <span className="intro-header">Experience</span>
-          </div>
-        </div>
         <div className="row d-flex justify-content-center mt-4">
           <div className="col-8">
             <h5><span className="font-weight-bold">Marketing Manager</span></h5>

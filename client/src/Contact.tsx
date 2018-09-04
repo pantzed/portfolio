@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Contact.css';
 
 export interface Props {
@@ -14,14 +15,10 @@ export default class Contact extends React.Component<Props> {
   render() {
     return (
       <div>
-        <div className="row pt-3">
-          <div className="col-12">
-            <button className="btn btn-sm" onClick={(e) => this.props.activate(e, 'NAV')}>Home</button>
-          </div>
-        </div>
-        <div className="row mt-4">
-          <div className="col-12">
-            <span className="intro-header">Contact</span>
+        <div className="row pt-4">
+          <div className="col-12 d-flex justify-content-between">
+            <span className="page-header">Contact</span>
+            <span className="p-3 border border-light rounded text-center text-custom bg-tp-light stat-shadow" onClick={(e) => this.props.activate(e, 'NAV')}><FontAwesomeIcon icon='bars'/></span>
           </div>
         </div>
         <div className="row d-flex justify-content-center mt-2">
