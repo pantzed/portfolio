@@ -108,7 +108,6 @@ class App extends React.Component<Props, State> {
 
   public render() {
     return (
-      <div>
         <main className="container-fluid bg-app full-height text-light">
           {this.state.navActive && <Nav activate={this.activate} prev={this.state.prevPage}/>}
           {this.state.homeActive && <Home activate={this.activate}/>}
@@ -117,7 +116,6 @@ class App extends React.Component<Props, State> {
           {this.state.experienceActive && <Experience activate={this.activate}/>}
           {this.state.contactActive && <Contact activate={this.activate}/>}
         </main>
-      </div>
     );
   }
 }

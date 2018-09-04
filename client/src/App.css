@@ -5,7 +5,7 @@
   min-height: 100vh;
 }
 
-body {
+.bg-app {
   background-color: black;
   background-image: 
     linear-gradient(rgba(0, 0, 0, 0.35), rgba(152, 2, 197, 0.25)),
@@ -43,4 +43,3 @@ body {
 .stat {
   font-size: 2em;
 }
-
