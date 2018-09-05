@@ -14,6 +14,7 @@ interface State {
   repoCount: number;
   mileCount: number;
   loading: boolean;
+  currentSong: any;
 }
 
 export default class Navigation extends React.Component<Props, State> {
@@ -23,6 +24,11 @@ export default class Navigation extends React.Component<Props, State> {
       repoCount: 0,
       mileCount: 246,
       loading: false,
+      currentSong: {
+        artist: '',
+        album: '',
+        img: '',
+      },
     }
   }
 
@@ -59,7 +65,17 @@ export default class Navigation extends React.Component<Props, State> {
       })
       .then((text) => JSON.parse(text))
       .then((data) => {
-        console.log(data);
+        const currentSong = {
+          artist: data.item.artists[0].name,
+          album: data.item.album.name,
+          img: data.item.album.images[1].url
+        }
+        return currentSong;
+      })
+      .then((currentSong) => {
+        this.setState({
+          currentSong: currentSong,
+        })
       })
       .catch((error) => {
         console.log(error);
@@ -129,6 +145,21 @@ export default class Navigation extends React.Component<Props, State> {
               <div className="col-12 pt-2 d-flex justify-content-center align-items-center">
                 <FontAwesomeIcon className="icon" icon="bicycle" />
                 <span className="pl-3 stat">{this.state.mileCount}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="row mt-4 ml-2">
+          <div className="col-auto p-3 montserrat border border-light rounded text-center bg-tp-light stat-shadow">
+            <div className="row">
+              <div className="col-12 text-center">
+                <span className="text-custom">Spotify Live</span>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-12 pt-2 d-flex justify-content-center align-items-center">
+
+                <span className="pl-3">{this.state.currentSong.album}</span>
               </div>
             </div>
           </div>
