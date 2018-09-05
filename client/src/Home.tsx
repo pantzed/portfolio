@@ -33,19 +33,19 @@ export default class Navigation extends React.Component<Props, State> {
   }
 
   componentDidMount() :void {
-    this.setState({loading: true});
+    // this.setState({loading: true});
 
-    fetch('https://cors-anywhere.herokuapp.com/https://api.github.com/users/pantzed', {method: "GET"})
-    .then((res) => res.text())
-    .then((data) => JSON.parse(data))
-    .then((json) => {
-      this.setState({
-        repoCount: json.public_repos,
-      })
-    })
-    .then(() => {
-      this.setState({loading: false});
-    });
+    // fetch('https://cors-anywhere.herokuapp.com/https://api.github.com/users/pantzed', {method: "GET"})
+    // .then((res) => res.text())
+    // .then((data) => JSON.parse(data))
+    // .then((json) => {
+    //   this.setState({
+    //     repoCount: json.public_repos,
+    //   })
+    // })
+    // .then(() => {
+    //   this.setState({loading: false});
+    // });
 
     // fetch('https://api.spotify.com/v1/me/player/currently-playing', 
     //   {
