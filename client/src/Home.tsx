@@ -47,39 +47,39 @@ export default class Navigation extends React.Component<Props, State> {
       this.setState({loading: false});
     });
 
-    fetch('https://api.spotify.com/v1/me/player/currently-playing', 
-      {
-        method: "GET",
-        headers: {
-          Authorization: 'Bearer ' + "BQAP1zp8rNpg77IloyYv5uU9ZnRlFqlNJJJgt7-UdtolOIK4dg2xv5hM8s6k6A1hdusSmbjPYtodMwDIE9bwRfAzAmPR3ev32pK9Y4eDR7R0QXEFZVTlT_fIie67IhwIi7A-dUVQBXajOuIN69fLhwdfI8ItZ9BMGsXiuOkyvrdJA3OPmreF7O_gqMj9bupp6khpS4Pe8k8DA02edsN6nHi_VhNmoKdhff0bj1sd9vMF0KJRdsmJzNyY8FmMna3dln22NJRtxdnvjiNmXw"
-        }
-      })
-      .then((res) => {
-        if (res.status !== 200){
-          console.log(res.status);
-          return Promise.reject(new Error('Resource unabailable'));
-        }
-        else {
-          return res.text();
-        }
-      })
-      .then((text) => JSON.parse(text))
-      .then((data) => {
-        const currentSong = {
-          artist: data.item.artists[0].name,
-          album: data.item.album.name,
-          img: data.item.album.images[1].url
-        }
-        return currentSong;
-      })
-      .then((currentSong) => {
-        this.setState({
-          currentSong: currentSong,
-        })
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    // fetch('https://api.spotify.com/v1/me/player/currently-playing', 
+    //   {
+    //     method: "GET",
+    //     headers: {
+    //       Authorization: 'Bearer ' + "BQAP1zp8rNpg77IloyYv5uU9ZnRlFqlNJJJgt7-UdtolOIK4dg2xv5hM8s6k6A1hdusSmbjPYtodMwDIE9bwRfAzAmPR3ev32pK9Y4eDR7R0QXEFZVTlT_fIie67IhwIi7A-dUVQBXajOuIN69fLhwdfI8ItZ9BMGsXiuOkyvrdJA3OPmreF7O_gqMj9bupp6khpS4Pe8k8DA02edsN6nHi_VhNmoKdhff0bj1sd9vMF0KJRdsmJzNyY8FmMna3dln22NJRtxdnvjiNmXw"
+    //     }
+    //   })
+    //   .then((res) => {
+    //     if (res.status !== 200){
+    //       console.log(res.status);
+    //       return Promise.reject(new Error('Resource unabailable'));
+    //     }
+    //     else {
+    //       return res.text();
+    //     }
+    //   })
+    //   .then((text) => JSON.parse(text))
+    //   .then((data) => {
+    //     const currentSong = {
+    //       artist: data.item.artists[0].name,
+    //       album: data.item.album.name,
+    //       img: data.item.album.images[1].url
+    //     }
+    //     return currentSong;
+    //   })
+    //   .then((currentSong) => {
+    //     this.setState({
+    //       currentSong: currentSong,
+    //     })
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
     }
 
   render() {
