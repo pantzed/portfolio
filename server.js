@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const https = require('https');
 const port = process.env.PORT || 8000;
 
 const app = express();
@@ -14,8 +15,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 const projectsRouter = require('./routes/projects');
+const spotifyRouter = require('./routes/spotify');
 
 app.use('/projects', projectsRouter);
+app.use('/spotify', spotifyRouter);
 app.use(express.static(path.join(__dirname, 'client', 'index.html')));
 
 // catch 404 and forward to error handler
