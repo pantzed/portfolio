@@ -7,8 +7,7 @@ const knex = require('knex')(config); // define database based on above
 
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
-let currentCode = 'AQAADuIL2_26PP5y2rULoeK1BZ6WclYXTl6qWTTHUwq7d51jz_AjVktDUT_7gJmsogmbHVpIU97_SKFoheYVEShNMrNicUv6FplCqSrjWomKA4EWOZHuyd2D3qhlPMZH8Nnu2zXXcTSLSYatzFuTNGKJV54ctJgafOoOb6WIZdI-GEBE7Sf7clvmbcgx6aYecOj-ifztcuTAwq5uVRgdlS336axSY9y_Og';
-let refreshToken = '';
+let currentCode = 'AQBKo_M5zTuxLJHWX2evC_DMkS9zDneZg6WxZUSIYclZgoMvjaim4Pfwnh1yM_I0AHPf3pIAZWXeU4guJFlnAeo5SansT9abkv3t7ngUIQbrkFjsHeAcfli5txgRUloi6QEjFwVyDuEg7El_OhtsYa5RwpETGhwzfVjw2mG-XIfrXD7SCyJGbr4zfaAwr1hcXinLsvKrsxNSTqwrYE3t4nhsKUJwlJejMw';
 
 let postAuth = {
   url: 'https://accounts.spotify.com/api/token',
@@ -102,7 +101,7 @@ function refreshSpotify(){
   .then((res) => {
     accessToken = res.data.access_token;
     refreshToken = res.data.refresh_token;
-    console.log(res);
+    console.log(res.data);
   })
   .catch(function (error) {
     if (error.response) {
@@ -124,7 +123,11 @@ function refreshSpotify(){
   });
 };
 
+router.get('/playing', (req, res) => {
+  console.log('HIT');
+  res.send(`${currentCode}`);
+});
 
-setInterval(refreshSpotify, 35000);
+setInterval(refreshSpotify, 320000);
 
 module.exports = router;

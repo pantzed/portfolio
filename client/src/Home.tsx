@@ -32,7 +32,7 @@ export default class Navigation extends React.Component<Props, State> {
     }
   }
 
-  componentDidMount() :void {
+  componentDidMount() {
     this.setState({loading: true});
 
     fetch('https://cors-anywhere.herokuapp.com/https://api.github.com/users/pantzed', {method: "GET"})
@@ -47,14 +47,33 @@ export default class Navigation extends React.Component<Props, State> {
       this.setState({loading: false});
     });
 
-    fetch('https://api.spotify.com/v1/me/player/currently-playing', 
+    fetch('/spotify/playing', {
+      method: 'GET',
+      mode: 'cors',
+      headers: {
+          "Content-Type": "application/json; charset=utf-8",
+      },
+      redirect: "follow",
+      referrer: "no-referrer"
+    })
+    .then(res => {
+      return res.text();
+    })
+    .then((code) => {
+      console.log(code);
+      return code;
+    })
+    .then((code) => {
+      console.log(code);
+      return fetch('https://api.spotify.com/v1/me/player/currently-playing', 
       {
         method: "GET",
         headers: {
-          Authorization: 'Bearer ' + "BQAP1zp8rNpg77IloyYv5uU9ZnRlFqlNJJJgt7-UdtolOIK4dg2xv5hM8s6k6A1hdusSmbjPYtodMwDIE9bwRfAzAmPR3ev32pK9Y4eDR7R0QXEFZVTlT_fIie67IhwIi7A-dUVQBXajOuIN69fLhwdfI8ItZ9BMGsXiuOkyvrdJA3OPmreF7O_gqMj9bupp6khpS4Pe8k8DA02edsN6nHi_VhNmoKdhff0bj1sd9vMF0KJRdsmJzNyY8FmMna3dln22NJRtxdnvjiNmXw"
+          Authorization: `Bearer ${code}`
         }
       })
       .then((res) => {
+        console.log(res.body)
         if (res.status !== 200){
           console.log(res.status);
           return Promise.reject(new Error('Resource unabailable'));
@@ -80,7 +99,8 @@ export default class Navigation extends React.Component<Props, State> {
       .catch((error) => {
         console.log(error);
       });
-    }
+    })
+  }
 
   render() {
     return (
