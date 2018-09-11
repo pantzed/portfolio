@@ -22,7 +22,7 @@ export default class Navigation extends React.Component<Props, State> {
     super(props);
     this.state = {
       repoCount: 0,
-      mileCount: 246,
+      mileCount: 0,
       loading: false,
       currentSong: {
         artist: '',
@@ -32,7 +32,19 @@ export default class Navigation extends React.Component<Props, State> {
     }
   }
 
+  countMilesCommuted(){
+    const startDate = Date.parse('30 Mar 2018 00:00:00 GMT');
+    const now = Date.now();
+    const toNow = (now - startDate);
+    const miles = Math.round(toNow * (1.15738e-8) * 2.8);
+    console.log(miles);
+    this.setState({
+      mileCount: miles
+    });
+  }
+
   componentDidMount() {
+    this.countMilesCommuted();
     this.setState({loading: true});
 
     fetch('https://cors-anywhere.herokuapp.com/https://api.github.com/users/pantzed', {method: "GET"})
