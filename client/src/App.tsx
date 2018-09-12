@@ -25,10 +25,10 @@ class App extends React.Component<Props, State> {
     super(props);
     this.state = { 
       navActive: false,
-      homeActive: true,
+      homeActive: false,
       introActive: false,
       projectsActive: false,
-      experienceActive: false,
+      experienceActive: true,
       contactActive: false,
       prevPage: 'HOME',
     }

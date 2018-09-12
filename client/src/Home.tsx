@@ -37,7 +37,6 @@ export default class Navigation extends React.Component<Props, State> {
     const now = Date.now();
     const toNow = (now - startDate);
     const miles = Math.round(toNow * (1.15738e-8) * 2.8);
-    console.log(miles);
     this.setState({
       mileCount: miles
     });
@@ -181,6 +180,7 @@ export default class Navigation extends React.Component<Props, State> {
             </div>
           </div>
         </div>
+        {/*} WIP
         <div className="row mt-4 ml-2">
           <div className="col-auto p-3 montserrat border border-light rounded text-center bg-tp-light stat-shadow">
             <div className="row">
@@ -195,6 +195,7 @@ export default class Navigation extends React.Component<Props, State> {
             </div>
           </div>
         </div>
+        */}
       </div>
       </div>
     )

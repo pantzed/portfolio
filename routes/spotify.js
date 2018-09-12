@@ -33,7 +33,7 @@ let refreshAuthToken = {
   }
 }
 
-let getAuth = {
+let getAuthURL = {
   url: 'https://accounts.spotify.com/authorize',
   method: 'GET',
   params: {
@@ -45,37 +45,48 @@ let getAuth = {
   }
 }
 
+let getAuthCode = {
+  url: '',
+  method: 'GET'
+}
 
-// axios(getAuth)
-// .then((res) => {
-//   console.log(res);
-// })
-// .catch(function (error) {
-//   if (error.response) {
-//     // The request was made and the server responded with a status code
-//     // that falls out of the range of 2xx
-//     console.log(error.response.data);
-//     console.log(error.response.status);
-//     console.log(error.response.headers);
-//   } else if (error.request) {
-//     // The request was made but no response was received
-//     // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-//     // http.ClientRequest in node.js
-//     console.log(error.request);
-//   } else {
-//     // Something happened in setting up the request that triggered an Error
-//     console.log('Error', error.message);
-//   }
-//   console.log(error.config);
-// });
+
+axios(getAuthURL)
+.then((res) => {
+  getAuthCode.url = res.request._redirectable._currentUrl;
+})
+.then(() =>{
+  return axios(getAuthCode)
+  .then((res) => {
+    // console.log('#####################\n#####################\n#####################\n#####################\n');
+    // console.log(res);
+    // console.log('#####################\n#####################\n#####################\n#####################\n');
+  });
+})
+.catch(function (error) {
+  if (error.response) {
+    // The request was made and the server responded with a status code
+    // that falls out of the range of 2xx
+    console.log(error.response.data);
+    console.log(error.response.status);
+    console.log(error.response.headers);
+  } else if (error.request) {
+    // The request was made but no response was received
+    // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+    // http.ClientRequest in node.js
+    console.log(error.request);
+  } else {
+    // Something happened in setting up the request that triggered an Error
+    console.log('Error', error.message);
+  }
+  console.log(error.config);
+});
 
 
 axios(postAuth)
 .then((res) => {
-  console.log(res.data);
   accessToken = res.data.access_token;
   refreshAuthToken.params.refresh_token = res.data.refresh_token;
-  console.log(refreshAuthToken);
 })
 .catch(function (error) {
   if (error.response) {
@@ -101,7 +112,6 @@ function refreshSpotify(){
   .then((res) => {
     accessToken = res.data.access_token;
     refreshToken = res.data.refresh_token;
-    console.log(res.data);
   })
   .catch(function (error) {
     if (error.response) {
@@ -124,7 +134,6 @@ function refreshSpotify(){
 };
 
 router.get('/playing', (req, res) => {
-  console.log('HIT');
   res.send(`${currentCode}`);
 });
 
