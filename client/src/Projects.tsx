@@ -38,6 +38,7 @@ export class Projects extends React.Component<Props, State>{
   }
 
   componentDidMount(){
+
     fetch('/projects', {
       method: 'GET',
       mode: 'cors',
@@ -53,7 +54,8 @@ export class Projects extends React.Component<Props, State>{
       this.setState({
         projects: data,
       });
-    })
+    });
+
   }
 
   render(){

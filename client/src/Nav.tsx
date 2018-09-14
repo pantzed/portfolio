@@ -15,7 +15,6 @@ export default class Nav extends React.Component<Props>{
   }
 
   render(){
-    console.log(this.props.prev);
     return(
       <div className="row full-height bg-tp-dark">
         <div className="col-12">
