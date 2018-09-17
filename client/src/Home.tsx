@@ -12,7 +12,6 @@ export interface Props {
 
 interface State {
   repoCount: number;
-  mileCount: number;
   loading: boolean;
 }
 
@@ -21,8 +20,7 @@ export default class Navigation extends React.Component<Props, State> {
     super(props);
     this.state = {
       repoCount: 0,
-      mileCount: 0,
-      loading: false,
+      loading: true,
     }
   }
 
@@ -31,14 +29,10 @@ export default class Navigation extends React.Component<Props, State> {
     const now = Date.now();
     const toNow = (now - startDate);
     const miles = Math.round(toNow * (1.15738e-8) * 2.8);
-    this.setState({
-      mileCount: miles
-    });
+    return miles;
   }
 
   componentDidMount() {
-    this.countMilesCommuted();
-    this.setState({loading: true});
 
     fetch('https://cors-anywhere.herokuapp.com/https://api.github.com/users/pantzed', {method: "GET"})
     .then((res) => res.text())
@@ -46,10 +40,8 @@ export default class Navigation extends React.Component<Props, State> {
     .then((json) => {
       this.setState({
         repoCount: json.public_repos,
+        loading: false
       })
-    })
-    .then(() => {
-      this.setState({loading: false});
     });
   }
 
@@ -100,7 +92,10 @@ export default class Navigation extends React.Component<Props, State> {
             <div className="row">
               <div className="col-12 pt-2 d-flex justify-content-center align-items-center">
                 <FontAwesomeIcon className="icon" icon="code-branch" />
-                <span className="pl-3 stat">{this.state.repoCount}</span>
+                <span className="pl-3 stat">
+                  {this.state.loading && <div className="loader"></div>}
+                  {!this.state.loading && this.state.repoCount}
+                  </span>
               </div>
             </div>
           </div>
@@ -115,7 +110,7 @@ export default class Navigation extends React.Component<Props, State> {
             <div className="row">
               <div className="col-12 pt-2 d-flex justify-content-center align-items-center">
                 <FontAwesomeIcon className="icon" icon="bicycle" />
-                <span className="pl-3 stat">{this.state.mileCount}</span>
+                <span className="pl-3 stat">{ this.countMilesCommuted() }</span>
               </div>
             </div>
           </div>
