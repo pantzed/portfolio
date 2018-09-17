@@ -25,34 +25,34 @@ export default class Contact extends React.Component<Props> {
           <div className="col-11">
             <div className="row mt-2">
               <div className="col-4">
-                <span className="font-weight-bold">Phone:</span>
+                <span className="font-weight-bold duration-05 fade-in">Phone:</span>
               </div>
               <div className="col-6">
-                <span>(802) 233-6408</span>
+                <span className="delay-025 duration-025 pop-text">(802) 233-6408</span>
               </div>
             </div>
             <div className="row mt-2">
               <div className="col-4">
-                <span className="font-weight-bold">Email:</span>
+                <span className="font-weight-bold duration-05 fade-in">Email:</span>
               </div>
               <div className="col-6">
-                <span>edpantzar@gmail.com</span>
+                <span className="delay-05 duration-025 pop-text">edpantzar@gmail.com</span>
               </div>
             </div>
             <div className="row mt-2">
               <div className="col-4">
-                <span className="font-weight-bold">Github:</span>
+                <span className="font-weight-bold duration-05 fade-in">Github:</span>
               </div>
               <div className="col-6">
-                <span><a href="https://github.com/pantzed">github/pantzed</a></span>
+                <span className="delay-075 duration-025 pop-text"><a href="https://github.com/pantzed">github/pantzed</a></span>
               </div>
             </div>
             <div className="row mt-2">
               <div className="col-4">
-                <span className="font-weight-bold">Linkedin:</span>
+                <span className="font-weight-bold duration-05 fade-in">Linkedin:</span>
               </div>
               <div className="col-6">
-                <span><a href="https://www.linkedin.com/in/ed-pantzar/">Linkedin/ed-pantzar</a></span>
+                <span className="delay-10 duration-025 pop-text"><a href="https://www.linkedin.com/in/ed-pantzar/">Linkedin/ed-pantzar</a></span>
               </div>
             </div>
           </div>

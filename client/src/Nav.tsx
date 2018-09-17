@@ -24,7 +24,7 @@ export default class Nav extends React.Component<Props>{
               <span className="p-3 border border-light rounded text-center text-custom bg-tp-light stat-shadow" onClick={(e) => this.props.activate(e, this.props.prev)}><FontAwesomeIcon icon='times'/></span>
             </div>
           </div>
-          <div className="row mt-5 d-flex justify-content-center">
+          <div className="row mt-5 d-flex justify-content-center fade-in">
             <div className="col-11 col-md-8 col-lg-6 pt-1 pb-2">
               <NavButton activate={this.props.activate} activateArg={'HOME'} text={'Home'} prevPage={this.props.prev}/>
               <NavButton activate={this.props.activate} activateArg={'EXP'} text={'Experience'} prevPage={this.props.prev}/>

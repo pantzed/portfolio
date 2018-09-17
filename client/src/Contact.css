@@ -5,3 +5,78 @@
   font-size: 2.5em;
   font-family: 'Permanent Marker', cursive;
 }
+
+.delay-025 {
+  animation-delay: 0.25s;
+}
+
+.delay-05 {
+  animation-duration: 0.5s;
+}
+
+.delay-075 {
+  animation-duration: 0.75s;
+}
+
+.delay-10 {
+  animation-duration: 1s;
+}
+
+.delay-15 {
+  animation-duration: 1.5s;
+}
+
+.delay-2 {
+  animation-duration: 2s;
+}
+
+.duration-05 {
+  animation-duration: 0.5s;
+}
+
+.duration-10 {
+  animation-duration: 1s;
+}
+
+.duration-15 {
+  animation-duration: 1.5s;
+}
+
+.duration-20 {
+  animation-duration: 2s;
+}
+
+.fade-in {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.pop-text {
+  animation-name: popText;
+}
+
+@keyframes popText {
+  from {
+    opacity: 0;
+    font-size: 0em;
+  }
+
+  to {
+    opacity: 0.8;
+    font-size: 1.5em;
+  }
+
+  to {
+    opacity: 1;
+    font-size: 1em;
+  }
+}

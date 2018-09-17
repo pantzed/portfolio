@@ -21,11 +21,11 @@ export default class Experience extends React.Component<Props, State> {
   mapExp(){
     const expCards: any = this.state.experience.map((exp: any, index: number) => {
       return (
-        <div className="row d-flex justify-content-center mt-4 mb-5" key={index.toString()}>
+        <div className="row d-flex justify-content-center mt-4 mb-5 fade-in" key={index.toString()}>
           <div className="col-11">
-            <div className="row mt-3 pt-4 pb-3 text-dark bg-light border-custom rounded">
+            <div className="row mt-3 pt-4 pb-3 text-light bg-tp-light border-custom rounded">
               <div className="col-8">
-                <h5><span className="font-weight-bold">{exp.title}</span></h5>
+                <h5><span className="font-weight-bold text-custom">{exp.title}</span></h5>
                 <span>{exp.company}</span><br/>
                 <span className="font-italic">{exp.start} - {exp.end}</span>
               </div>

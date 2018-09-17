@@ -66,20 +66,25 @@ export default class Navigation extends React.Component<Props, State> {
             </div>
           </div>
             {!this.state.toggleAbout &&
-            <div>
+            <div className="fade-in">
               <div className="row">
                 <div className="col-12">
                   <span className="montserrat pl-1">Web Developer | Austin, TX</span>
                 </div>
               </div>
-              <div className="row pt-2">
+              <div className="row pt-2 ">
                 <div className="col-12 text-custom montserrat font-size-data">
                   <span className="pl-1"><span className="font-weight-bold">DOB: </span>7/20/88</span><br/>
                   <span className="pl-1"><span className="font-weight-bold">ORIGIN: </span>Burlington, VT</span><br/>
                   <span className="pl-1"><span className="font-weight-bold">STATUS: </span>Seeking Employment</span><br/>
                 </div>
               </div>
-              <div className="row mt-5 ml-2">
+              <div className="row pt-4 pb-2">
+                <div className="col-auto">
+                  <span className="montserrat pl-1">Quick Stats</span>
+                </div>
+              </div>
+              <div className="row ml-1">
                 <div className="col-auto p-3 montserrat border border-light rounded text-center bg-tp-light stat-shadow">
                   <div className="row">
                     <div className="col-12 text-center">
@@ -116,7 +121,7 @@ export default class Navigation extends React.Component<Props, State> {
                 <div className="col-auto p-3 montserrat border border-light rounded text-center bg-tp-light stat-shadow">
                   <div className="row">
                     <div className="col-12 text-center">
-                      <span className="text-custom">MILES COMMUTED (YTD)</span>
+                      <span className="text-custom">MILES <br /> COMMUTED (YTD)</span>
                     </div>
                   </div>
                   <div className="row">
@@ -130,7 +135,7 @@ export default class Navigation extends React.Component<Props, State> {
             </div>
           }
           {this.state.toggleAbout && 
-            <div className="row d-flex justify-content-center mt-4 mb-5">
+            <div className="row d-flex justify-content-center mt-4 mb-5 fade-in">
               <div className="col-11 bg-tp-dark montserrat border-about rounded">
                 <div className="row">
                   <div className="col-12 px-3 pt-3 pb-1 d-flex justify-content-between">
@@ -141,8 +146,10 @@ export default class Navigation extends React.Component<Props, State> {
                 <div className="row mb-3">
                   <div className="col-12 px-3">
                     <div className="py-1 mt-2">
-                      Mobile first with Bootstrap v4, ReactJS, and TypeScript on the front-end with 
-                      NodeJS and Postgres serving content from the backend.
+                      Made using Bootstrap v4, ReactJS, and TypeScript on the front-end with 
+                      NodeJS and Postgres serving content from the backend. The purpose of the site
+                      is to display my coding ability, creativity, professional experience, and 
+                      projects that I've worked on.
                     </div>
                     <div className="py-1 mt-2">
                       The Experience and Projects content is stored and served from Express/Postgres to improve
@@ -168,7 +175,7 @@ export default class Navigation extends React.Component<Props, State> {
           }
           </div>
           {!this.state.toggleAbout &&
-            <div className="row mb-4">
+            <div className="row mb-4 fade-in">
               <div className="col-12 d-flex justify-content-center">
                 <button type="button" className="btn btn-small btn-about montserrat" onClick={this.toggleAboutState}>About This Site</button>
               </div>

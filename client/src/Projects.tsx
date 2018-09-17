@@ -60,7 +60,7 @@ export class Projects extends React.Component<Props, State>{
 
   render(){
     return (
-    <div className="text-dark">
+    <div className="text-dark fade-in">
       <div className="row pt-4">
         <div className="col-12 d-flex justify-content-between">
           <span className="page-header">PROJECTS</span>

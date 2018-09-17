@@ -43,3 +43,18 @@
 .stat {
   font-size: 2em;
 }
+
+.fade-in {
+  animation-duration: 0.5s;
+  animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
