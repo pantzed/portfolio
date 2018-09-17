@@ -9,8 +9,28 @@
   background-color: #5EECBE;
 }
 
+.border-about {
+  border: 1px solid #9F6DF1;
+}
+
+.btn-about {
+  width: 100%;
+  padding: auto;
+  border-radius: 50px;
+  border-style: solid;
+  border-color: #9F6DF1;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 1em;
+  box-shadow: 0 0 7px 0 rgba(255, 255, 255, 0.5) !important;
+}
+
 .text-custom {
   color: #5EECBE;
+}
+
+.text-custom-2 {
+  color: #9F6DF1;
 }
 
 .montserrat {
