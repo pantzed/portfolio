@@ -14,7 +14,6 @@ interface State {
   repoCount: number;
   mileCount: number;
   loading: boolean;
-  currentSong: any;
 }
 
 export default class Navigation extends React.Component<Props, State> {
@@ -24,11 +23,6 @@ export default class Navigation extends React.Component<Props, State> {
       repoCount: 0,
       mileCount: 0,
       loading: false,
-      currentSong: {
-        artist: '',
-        album: '',
-        img: '',
-      },
     }
   }
 
@@ -57,60 +51,6 @@ export default class Navigation extends React.Component<Props, State> {
     .then(() => {
       this.setState({loading: false});
     });
-
-    fetch('/spotify/playing', {
-      method: 'GET',
-      mode: 'cors',
-      headers: {
-          "Content-Type": "application/json; charset=utf-8",
-      },
-      redirect: "follow",
-      referrer: "no-referrer"
-    })
-    .then(res => {
-      return res.text();
-    })
-    .then((code) => {
-      console.log(code);
-      return code;
-    })
-    .then((code) => {
-      console.log(code);
-      return fetch('https://api.spotify.com/v1/me/player/currently-playing', 
-      {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${code}`
-        }
-      })
-      .then((res) => {
-        console.log(res.body)
-        if (res.status !== 200){
-          console.log(res.status);
-          return Promise.reject(new Error('Resource unabailable'));
-        }
-        else {
-          return res.text();
-        }
-      })
-      .then((text) => JSON.parse(text))
-      .then((data) => {
-        const currentSong = {
-          artist: data.item.artists[0].name,
-          album: data.item.album.name,
-          img: data.item.album.images[1].url
-        }
-        return currentSong;
-      })
-      .then((currentSong) => {
-        this.setState({
-          currentSong: currentSong,
-        })
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    })
   }
 
   render() {
@@ -180,22 +120,6 @@ export default class Navigation extends React.Component<Props, State> {
             </div>
           </div>
         </div>
-        {/*} WIP
-        <div className="row mt-4 ml-2">
-          <div className="col-auto p-3 montserrat border border-light rounded text-center bg-tp-light stat-shadow">
-            <div className="row">
-              <div className="col-12 text-center">
-                <span className="text-custom">Spotify Live</span>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-12 pt-2 d-flex justify-content-center align-items-center">
-                <span className="pl-3">{this.state.currentSong.album}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        */}
       </div>
       </div>
     )

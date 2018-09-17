@@ -16,9 +16,11 @@ app.use(cookieParser());
 
 const projectsRouter = require('./routes/projects');
 const spotifyRouter = require('./routes/spotify');
+const expRouter = require('./routes/experience');
 
 app.use('/projects', projectsRouter);
 app.use('/spotify', spotifyRouter);
+app.use('/exp', expRouter);
 app.use(express.static(path.join(__dirname, 'client', 'index.html')));
 
 // catch 404 and forward to error handler
