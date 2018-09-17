@@ -23,7 +23,7 @@ exports.seed = function(knex, Promise) {
           title: 'Energy Live', 
           description: 'A revision of the original "energy-live" using node/express to serve a webpage showing electrical energy data.',
           img: 'https://images.pexels.com/photos/45072/pexels-photo-45072.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350',
-          url: 'http://eds-pixel-art-maker.surge.sh/',
+          url: 'https://energy-live.herokuapp.com/',
           git: 'https://github.com/pantzed/energy-live2'
         },
         {
