@@ -67,8 +67,8 @@ export class Projects extends React.Component<Props, State>{
           <span className="p-3 border border-light rounded text-center text-custom bg-tp-light stat-shadow" onClick={(e) => this.props.activate(e, 'NAV', 'PROJECTS')}><FontAwesomeIcon icon='bars'/></span>
         </div>
       </div>
-      <div className="row d-flex justify-content-center mb-5">
-        <div className="col-11">
+      <div className="d-md d-none-lg d-none-xlg row d-flex justify-content-center mb-5">
+        <div className="col-xs-11 col-md-4">
         { this.mapProjects() }
         </div>
       </div>

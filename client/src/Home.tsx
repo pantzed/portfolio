@@ -65,74 +65,74 @@ export default class Navigation extends React.Component<Props, State> {
               <span className="p-3 border border-light rounded text-center text-custom bg-tp-light stat-shadow" onClick={(e) => this.props.activate(e, 'NAV', 'HOME')}><FontAwesomeIcon icon='bars'/></span>
             </div>
           </div>
-            {!this.state.toggleAbout &&
-            <div className="fade-in">
-              <div className="row">
-                <div className="col-12">
-                  <span className="montserrat pl-1">Web Developer | Austin, TX</span>
-                </div>
+          {!this.state.toggleAbout &&
+          <div className="fade-in">
+            <div className="row">
+              <div className="col-12">
+                <span className="montserrat pl-1">Web Developer | Austin, TX</span>
               </div>
-              <div className="row pt-2 ">
-                <div className="col-12 text-custom montserrat font-size-data">
-                  <span className="pl-1"><span className="font-weight-bold">DOB: </span>7/20/88</span><br/>
-                  <span className="pl-1"><span className="font-weight-bold">ORIGIN: </span>Burlington, VT</span><br/>
-                  <span className="pl-1"><span className="font-weight-bold">STATUS: </span>Seeking Employment</span><br/>
-                </div>
+            </div>
+            <div className="row pt-2 ">
+              <div className="col-12 text-custom montserrat font-size-data">
+                <span className="pl-1"><span className="font-weight-bold">DOB: </span>7/20/88</span><br/>
+                <span className="pl-1"><span className="font-weight-bold">ORIGIN: </span>Burlington, VT</span><br/>
+                <span className="pl-1"><span className="font-weight-bold">STATUS: </span>Seeking Employment</span><br/>
               </div>
-              <div className="row pt-4 pb-2">
-                <div className="col-auto">
-                  <span className="montserrat pl-1">Quick Stats</span>
-                </div>
+            </div>
+            <div className="row pt-4 pb-2">
+              <div className="col-auto">
+                <span className="montserrat pl-1">Quick Stats</span>
               </div>
-              <div className="row ml-1">
-                <div className="col-auto p-3 montserrat border border-light rounded text-center bg-tp-light stat-shadow">
-                  <div className="row">
-                    <div className="col-12 text-center">
-                      <span className="text-custom">YEARS EXP</span>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-12 pt-2 d-flex justify-content-center align-items-center">
-                      <FontAwesomeIcon className="icon" icon="graduation-cap" />
-                      <span className="pl-3 stat">{2}</span>
-                    </div>
+            </div>
+            <div className="row ml-1">
+              <div className="col-auto p-3 montserrat border border-light rounded text-center bg-tp-light stat-shadow">
+                <div className="row">
+                  <div className="col-12 text-center">
+                    <span className="text-custom">YEARS EXP</span>
                   </div>
                 </div>
-              </div>
-              <div className="row mt-4 ml-2">
-                <div className="col-auto p-3 montserrat border border-light rounded text-center bg-tp-light stat-shadow">
-                  <div className="row">
-                    <div className="col-12 text-center">
-                      <span className="text-custom">GIT REPOS</span>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-12 pt-2 d-flex justify-content-center align-items-center">
-                      <FontAwesomeIcon className="icon" icon="code-branch" />
-                      <span className="pl-3 stat">
-                        {this.state.loading && <div className="loader"></div>}
-                        {!this.state.loading && this.state.repoCount}
-                        </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="row mt-4 ml-2">
-                <div className="col-auto p-3 montserrat border border-light rounded text-center bg-tp-light stat-shadow">
-                  <div className="row">
-                    <div className="col-12 text-center">
-                      <span className="text-custom">MILES <br /> COMMUTED (YTD)</span>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-12 pt-2 d-flex justify-content-center align-items-center">
-                      <FontAwesomeIcon className="icon" icon="bicycle" />
-                      <span className="pl-3 stat">{ this.countMilesCommuted() }</span>
-                    </div>
+                <div className="row">
+                  <div className="col-12 pt-2 d-flex justify-content-center align-items-center">
+                    <FontAwesomeIcon className="icon" icon="graduation-cap" />
+                    <span className="pl-3 stat">{2}</span>
                   </div>
                 </div>
               </div>
             </div>
+            <div className="row mt-4 ml-1">
+              <div className="col-auto p-3 montserrat border border-light rounded text-center bg-tp-light stat-shadow">
+                <div className="row">
+                  <div className="col-12 text-center">
+                    <span className="text-custom">GIT REPOS</span>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-12 pt-1 d-flex justify-content-center align-items-center">
+                    <FontAwesomeIcon className="icon" icon="code-branch" />
+                    <span className="pl-3 stat">
+                      {this.state.loading && <div className="loader"></div>}
+                      {!this.state.loading && this.state.repoCount}
+                      </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="row mt-4 ml-1">
+              <div className="col-auto p-3 montserrat border border-light rounded text-center bg-tp-light stat-shadow">
+                <div className="row">
+                  <div className="col-12 text-center">
+                    <span className="text-custom">MILES <br /> COMMUTED (YTD)</span>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-12 pt-2 d-flex justify-content-center align-items-center">
+                    <FontAwesomeIcon className="icon" icon="bicycle" />
+                    <span className="pl-3 stat">{ this.countMilesCommuted() }</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           }
           {this.state.toggleAbout && 
             <div className="row d-flex justify-content-center mt-4 mb-5 fade-in">
@@ -175,7 +175,7 @@ export default class Navigation extends React.Component<Props, State> {
           }
           </div>
           {!this.state.toggleAbout &&
-            <div className="row mb-4 fade-in">
+            <div className="row mt-3 mb-4 fade-in">
               <div className="col-12 d-flex justify-content-center">
                 <button type="button" className="btn btn-small btn-about montserrat" onClick={this.toggleAboutState}>About This Site</button>
               </div>
