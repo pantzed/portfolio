@@ -30,7 +30,7 @@ exports.seed = function(knex, Promise) {
           title: 'Pixel Art Maker', 
           description: 'An artistic outlet for creating pixelated artwork.',
           img: 'https://images.pexels.com/photos/1044989/pexels-photo-1044989.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350',
-          url: 'https://energy-live.herokuapp.com/',
+          url: 'http://eds-pixel-art-maker.surge.sh/',
           git: 'https://github.com/pantzed/pixel-art-maker'
         },
       ]);
